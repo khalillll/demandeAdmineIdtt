@@ -11,7 +11,7 @@ namespace demandeAdmineIdtt.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string Title { get; set; }
 
@@ -23,7 +23,8 @@ namespace demandeAdmineIdtt.Models
 
         public DateTime UpdatedAt { get; set; }
 
-
+        [ForeignKey("User")]
+        public string User_Id { get; set; }
         //relations
 
         public virtual ApplicationUser User { get; set; }

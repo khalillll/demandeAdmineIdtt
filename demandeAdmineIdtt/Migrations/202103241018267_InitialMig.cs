@@ -24,7 +24,7 @@ namespace demandeAdmineIdtt.Migrations
                 "dbo.Requests",
                 c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 128),
+                        Id = c.Int(nullable: false, identity: true),
                         Title = c.String(),
                         RequestDate = c.String(),
                         Flag = c.String(),
@@ -118,7 +118,7 @@ namespace demandeAdmineIdtt.Migrations
                 "dbo.RequestDocuments",
                 c => new
                     {
-                        Request_Id = c.String(nullable: false, maxLength: 128),
+                        Request_Id = c.Int(nullable: false),
                         Document_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.Request_Id, t.Document_Id })
