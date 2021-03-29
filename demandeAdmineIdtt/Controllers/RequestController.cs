@@ -102,7 +102,9 @@ namespace demandeAdmineIdtt.Controllers
                 db.Requests.Add(request);
                 db.SaveChanges();
                 //envoi de l'email
-
+                string currentUserId = User.Identity.GetUserId();
+                user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+                request.SendMail();
                 return RedirectToAction("Index");
             }
             return View(request);
@@ -171,6 +173,9 @@ namespace demandeAdmineIdtt.Controllers
 
                 db.SaveChanges();
                 //envoi de l'email
+                string currentUserId = User.Identity.GetUserId();
+                dbRequest.User = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+                dbRequest.SendMail();
                 return RedirectToAction("Index");
             }
             return View(request);

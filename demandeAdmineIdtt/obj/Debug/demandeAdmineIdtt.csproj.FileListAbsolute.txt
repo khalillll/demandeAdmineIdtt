@@ -322,3 +322,4 @@ C:\Users\abdelwahed\source\repos\demandeAdmineIdtt\demandeAdmineIdtt\demandeAdmi
 C:\Users\abdelwahed\source\repos\demandeAdmineIdtt\demandeAdmineIdtt\demandeAdmineIdtt\obj\Debug\demandeAdmineIdtt.pdb
 C:\Users\abdelwahed\source\repos\demandeAdmineIdtt\demandeAdmineIdtt\demandeAdmineIdtt\obj\Debug\demandeAdmineIdtt.Migrations.add_status.resources
 C:\Users\abdelwahed\source\repos\demandeAdmineIdtt\demandeAdmineIdtt\demandeAdmineIdtt\obj\Debug\demandeAdmineIdtt.csprojAssemblyReference.cache
+C:\MiniProjet\demandeAdmineIdtt\demandeAdmineIdtt\obj\Debug\demandeAdmineIdtt.Migrations.add_status.resources
