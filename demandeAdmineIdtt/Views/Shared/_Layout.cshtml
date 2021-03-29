@@ -19,23 +19,26 @@
                 </button>
                 @Html.ActionLink("DPA", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Documents", "Index", "Document")</li>
-                    <li>@Html.ActionLink("Requests", "Index", "Request")</li>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Documents", "Index", "Document")</li>
+                        <li>@Html.ActionLink("Requests", "Index", "Request")</li>
 
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        if (User.IsInRole("Admin"))
+                        @if (User.Identity.IsAuthenticated)
                         {
-                            <li>@Html.ActionLink("Roles", "Index", "Role")</li>
+                            if (User.IsInRole("Admin"))
+                            {
+                                <li>@Html.ActionLink("Roles", "Index", "Role")</li>
+                            }
                         }
-                    }
 
 
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            }
         </div>
     </div>
     <div class="container body-content">

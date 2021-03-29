@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace demandeAdmineIdtt.Models
         public string RequestDate { get; set; }
 
         public string Flag { get; set; }
+        [DefaultValue("On Hold")]
+        public string Status { get; set; }
 
         public DateTime CreatedAt { get; set; }
 

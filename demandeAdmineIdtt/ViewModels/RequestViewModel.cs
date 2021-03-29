@@ -15,6 +15,7 @@ namespace demandeAdmineIdtt.ViewModels
         public string RequestDate { get; set; }
 
         public string Flag { get; set; }
+        public string Status { get; set; }
 
      
         public List<int> Documents { get; set; }

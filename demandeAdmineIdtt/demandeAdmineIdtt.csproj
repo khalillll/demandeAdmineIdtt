@@ -184,6 +184,10 @@
     <Compile Include="Migrations\202103251148363_initdb_new.Designer.cs">
       <DependentUpon>202103251148363_initdb_new.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103291052236_add_status.cs" />
+    <Compile Include="Migrations\202103291052236_add_status.Designer.cs">
+      <DependentUpon>202103291052236_add_status.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Document.cs" />
@@ -291,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103251148363_initdb_new.resx">
       <DependentUpon>202103251148363_initdb_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103291052236_add_status.resx">
+      <DependentUpon>202103291052236_add_status.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

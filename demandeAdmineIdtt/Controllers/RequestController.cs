@@ -19,7 +19,19 @@ namespace demandeAdmineIdtt.Controllers
         // GET: Request
         public ActionResult Index()
         {
-            return View(db.Requests.ToList());
+            var userAuthId = User.Identity.GetUserId();
+            var userRequests = db.Requests.Where(x => x.User_Id == userAuthId);
+
+            if (User.IsInRole("Admin"))
+            {
+                return View(db.Requests.OrderByDescending(x => x.Flag).ThenBy(y => y.RequestDate).ToList());
+            }
+            else
+            {
+                return View(userRequests.ToList());
+            }
+
+            
         }
 
         // GET: Request/Details/5
@@ -82,6 +94,7 @@ namespace demandeAdmineIdtt.Controllers
                 request.Title = httpRequest.Title;
                 request.RequestDate = httpRequest.RequestDate;
                 request.Flag = httpRequest.Flag;
+                request.Status = "On Hold";
                 request.CreatedAt = DateTime.Now;
                 request.UpdatedAt = DateTime.Now;
 
@@ -164,6 +177,7 @@ namespace demandeAdmineIdtt.Controllers
         }
 
         // GET: Request/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id)
         {
             if (id == null)
@@ -179,6 +193,7 @@ namespace demandeAdmineIdtt.Controllers
         }
 
         // POST: Request/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
